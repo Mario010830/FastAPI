@@ -10,9 +10,15 @@ class Producto(BaseModel):
     precio_venta: float
     proveedor: str
     
+productos =[]    
+    
 
 app = FastAPI()
 
 @app.get("/")
 def index():
     return ("Bienvenidos a la Api de Productos")
+
+@app.get("/productos")
+def obtener_productos():
+    return productos
