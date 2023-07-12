@@ -22,3 +22,8 @@ def index():
 @app.get("/productos")
 def obtener_productos():
     return productos
+
+@app.post("/productos")
+def crear_producto(producto: Producto):
+    productos.append(producto)
+    return("Producto creado satisfactoriamente")
